@@ -16,6 +16,8 @@ contract MetaCoin {
 		balances[tx.origin] = 10000;
 	}
 
+	function () payable {}
+
 	function sendCoin(address receiver, uint amount) public returns(bool sufficient) {
 		if (balances[msg.sender] < amount) return false;
 		balances[msg.sender] -= amount;
